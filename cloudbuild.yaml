@@ -14,6 +14,11 @@ steps:
   args: ['install']
   dir: './plugin'
 
+  # Install Uploadcare package for the plugin
+- name: 'gcr.io/cloud-builders/npm'
+  args: ['install', '--save-exact', '@uploadcare/blocks@0.25.0']
+  dir: './plugin'
+
   # Build the main project
 - name: 'gcr.io/cloud-builders/npm'
   args: ['run', 'build']
