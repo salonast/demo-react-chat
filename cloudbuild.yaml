@@ -1,0 +1,30 @@
+steps:
+  # Install main project dependencies
+- name: 'gcr.io/cloud-builders/npm'
+  args: ['install']
+  dir: './'
+
+  # Install server dependencies
+- name: 'gcr.io/cloud-builders/npm'
+  args: ['install']
+  dir: './server'
+
+  # Install plugin dependencies
+- name: 'gcr.io/cloud-builders/npm'
+  args: ['install']
+  dir: './plugin'
+
+  # Build the main project
+- name: 'gcr.io/cloud-builders/npm'
+  args: ['run', 'build']
+  dir: './'
+
+  # Build the server
+- name: 'gcr.io/cloud-builders/npm'
+  args: ['run', 'build']
+  dir: './server'
+
+  # Build the plugin
+- name: 'gcr.io/cloud-builders/npm'
+  args: ['run', 'build']
+  dir: './plugin'
