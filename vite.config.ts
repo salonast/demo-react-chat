@@ -1,5 +1,7 @@
 import { defineConfig } from 'vite';
 
+const port = process.env.PORT || 3006;
+
 export default defineConfig({
   build: {
     outDir: 'build',
@@ -9,6 +11,6 @@ export default defineConfig({
   },
   envPrefix: 'VF_',
   server: {
-    port: 3006,
+    port,
   },
 });
